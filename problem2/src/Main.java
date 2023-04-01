@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
-    public static float theAVRG(int[] a){
-        float sum = 0;
-        for (int j : a) {
-            sum += j;
+
+    public static float theAVRG(int[] a, int b){
+        if (b < 1){
+            return 0;
         }
-        sum /= a.length;
-        return sum;
+        return (theAVRG(a, b - 1) * (b-1) + a[b-1]) / b;
     }
 
 
@@ -22,6 +21,6 @@ public class Main {
         for (int i = 0; i < a; i++){
             b[i] = tc.nextInt();
         }
-        System.out.println(theAVRG(b));
+        System.out.println(theAVRG(b, a));
     }
 }
