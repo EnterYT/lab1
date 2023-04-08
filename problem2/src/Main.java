@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static float theAVRG(int[] a, int b){//Function finding the avarage of elements in array a
         if (b < 1){//Base condition
             return 0;
