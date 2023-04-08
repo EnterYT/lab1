@@ -1,19 +1,17 @@
 import java.util.Scanner;
 
 public class Main {
-    public static boolean isPrime(int a) {
-        for (int i = 2; i < a; i++) {
-            if(a % i == 0) {
-                return false;
-            }
+    public static int isPrime(int a, int b) {
+        if (b < 2){
+            return a + 1;
         }
-        return true;
+        return isPrime(a, b - 1) % a;
     }
 
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        System.out.println(isPrime(a));
+        System.out.println(isPrime(a, a));
     }
 }
